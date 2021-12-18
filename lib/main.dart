@@ -33,8 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   final pages = [
     PageViewModel(
       pageColor: Colors.black,
-      // iconImageAssetPath: 'assets/air-hostess.png',
-      // bubble: Image.asset('assets/air-hostess.png'),
+     
       body: Text(
         "I'm Skull Face the man who can give you advice about anythings.",
         style: GoogleFonts.marcellus(fontSize: 20, color: Colors.white70),
@@ -72,8 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
     PageViewModel(
       pageColor: Color(0xFF181818),
-      // iconImageAssetPath: 'assets/air-hostess.png',
-      // bubble: Image.asset('assets/air-hostess.png'),
+    
       body: Text(
         "If you are ready , please press DONE to talk with me.",
         style: GoogleFonts.marcellus(fontSize: 20, color: Colors.white70),
@@ -105,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         },
         pageButtonTextStyles: GoogleFonts.marcellus(
             fontSize: 20,
-            color: Color(0xffb49957),
+            color: const Color(0xffb49957),
             fontWeight: FontWeight.w600),
       ),
     );

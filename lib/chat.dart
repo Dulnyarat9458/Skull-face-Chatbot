@@ -52,10 +52,9 @@ class _ChatState extends State<Chat> {
 
     await Future.wait([_recorder.initialize()]);
 
-    // Get a Service account
     final serviceAccount = ServiceAccount.fromString(
         '${(await rootBundle.loadString('assets/credentials.json'))}');
-    // Create a DialogflowGrpc Instance
+
     dialogflow = DialogflowGrpcV2Beta1.viaServiceAccount(serviceAccount);
   }
 
@@ -170,15 +169,18 @@ class _ChatState extends State<Chat> {
       appBar: AppBar(
         iconTheme: const IconThemeData(color: Color(0xffb59a57)),
         backgroundColor: Colors.transparent,
-        title: Row(mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
               "Skull Face",
               style: GoogleFonts.marcellus(),
-            ),  if(_isRecording)Text(
-              "Recording",
-              style: GoogleFonts.marcellus(color:Color(0xffb59a57)),
             ),
+            if (_isRecording)
+              Text(
+                "Recording",
+                style: GoogleFonts.marcellus(color: Color(0xffb59a57)),
+              ),
           ],
         ),
       ),
@@ -253,8 +255,7 @@ class _ChatState extends State<Chat> {
                     child: Container(
                       decoration: BoxDecoration(
                         color: Colors.black87,
-                        borderRadius: BorderRadius.all(
-                          
+                        borderRadius: const BorderRadius.all(
                           Radius.circular(1000),
                         ),
                         boxShadow: [
@@ -274,7 +275,7 @@ class _ChatState extends State<Chat> {
                       ),
                       margin: EdgeInsets.all(4),
                       padding: EdgeInsets.all(14),
-                      child: Icon(
+                      child: const Icon(
                         Icons.mic,
                         color: Color(0xffb59a57),
                       ),
