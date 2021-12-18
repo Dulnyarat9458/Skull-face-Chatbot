@@ -104,7 +104,7 @@ class _ChatState extends State<Chat> {
       _audioStream.add(data);
     });
 
-    // Create an audio InputConfig
+    
     var biasList = SpeechContextV2Beta1(phrases: [
       'Dialogflow CX',
       'Dialogflow Essentials',
@@ -122,11 +122,11 @@ class _ChatState extends State<Chat> {
 
     final responseStream =
         dialogflow!.streamingDetectIntent(config, _audioStream);
-    // Get the transcript and detectedIntent and show on screen
+   
     responseStream.listen((data) {
-      //print('----');
+    
       setState(() {
-        //print(data);
+        
         String transcript = data.recognitionResult.transcript;
         String queryText = data.queryResult.queryText;
         String fulfillmentText = data.queryResult.fulfillmentText;
@@ -159,9 +159,6 @@ class _ChatState extends State<Chat> {
     });
   }
 
-  // The chat interface
-  //
-  //------------------------------------------------------------------------------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -300,10 +297,6 @@ class _ChatState extends State<Chat> {
   }
 }
 
-//------------------------------------------------------------------------------------
-// The chat message balloon
-//
-//------------------------------------------------------------------------------------
 class ChatMessage extends StatelessWidget {
   // ignore: use_key_in_widget_constructors
   const ChatMessage(
